@@ -1,0 +1,33 @@
+config:
+  model:
+    id: "Qwen/Qwen2.5-Coder-0.5B"
+    attn_implementation: "flash_attention_2"
+  input: "train_data_filtered.jsonl"
+  output: "../checkpoints/qwen25-05-ft"
+  ratio:
+    l2r: 0.1
+    fim: 0.8
+    sfim: 0.1
+  split: token # character
+  seed: 42
+
+trainer:
+  max_length: 2048
+  batch_size: 4
+  gradient_step: 4
+  lr: 2e-4
+  num_epochs: 1
+  logging_step: 100
+
+tokenizer:
+  use_fast: true
+
+tokens:
+  prefix: "<|fim_prefix|>"
+  middle: "<|fim_middle|>"
+  suffix: "<|fim_suffix|>"
+  file: "<|file_sep|>"
+  eot: "<|endoftext|>"
+
+template:
+  target_file: "{file_mark}{path}\n{text}"

@@ -1,3 +1,10 @@
+# Custom
+*.json
+*.jsonl
+*.jsonl.gz
+outer_old/*
+*/log/*
+*/logs/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

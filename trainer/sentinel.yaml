@@ -1,0 +1,18 @@
+Qwen:
+  -prefix: "<|fim_prefix|>"
+  -middle: "<|fim_middle|>"
+  -suffix: "<|fim_suffix|>"
+  -file: "<|file_sep|>"
+  -eot: "<|endoftext|>"
+DeepSeek:
+  -prefix: "<｜fim▁begin｜>"
+  -middle: "<｜fim▁end｜>"
+  -suffix: "<｜fim▁hole｜>"
+  -file: "#"
+  -eot: "<｜end▁of▁sentence｜>"
+Llama:
+  -prefix: "<fim_prefix>"
+  -middle: "<fim_middle>"
+  -suffix: "<fim_suffix>"
+  -file: "#"
+  -eot: "<|begin_of_text|>"

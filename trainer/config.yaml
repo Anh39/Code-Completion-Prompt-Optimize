@@ -1,0 +1,31 @@
+config:
+  model:
+    id: instinctguo/llama3.1-8b-train
+    attn_implementation: flash_attention_2
+  input: train_data_filtered.jsonl
+  output: /root/workspace/versions_raio_changed/instinctguo__llama3.1-8b-train-token/checkpoint
+  ratio:
+    l2r: 0.2
+    fim: 0.3
+    sfim: 0.5
+  split: token
+  seed: 42
+trainer:
+  max_length: 2048
+  batch_size: 4
+  gradient_step: 4
+  lr: 2e-4
+  num_epochs: 1
+  logging_step: 100
+tokenizer:
+  use_fast: true
+tokens:
+  prefix: <fim_prefix>
+  middle: <fim_middle>
+  suffix: <fim_suffix>
+  file: '#'
+  eot: <|end_of_text|>
+template:
+  target_file: '{file_mark}{path}
+
+    {text}'
