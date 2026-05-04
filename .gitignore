@@ -5,6 +5,9 @@
 outer_old/*
 */log/*
 */logs/*
+data/stackv2_100mb/
+*.zip
+sample/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

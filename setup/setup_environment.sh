@@ -5,3 +5,5 @@ pip3 install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytor
 pip3 install -r requirements.txt
 pip3 install flash-attn --no-build-isolation
 pip3 install pytest pytest-cov pytest-benchmark coincidence cssutils docutils openpyxl hypothesis pycodestyle
+
+ulimit -n 65535 # Increase network limit

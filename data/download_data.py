@@ -234,7 +234,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--token", default=None)
     parser.add_argument("--split", type=str, default="train")
-    parser.add_argument("--buckets", nargs="+", type=str, default=["0.5-1:50", "1-5:50", "5-15:50"])
+    parser.add_argument("--buckets", nargs="+", type=str, default=["0.5-1:10", "1-5:50", "5-15:50"])# default=["8-15:40", "15-25:60"])
     parser.add_argument("--target_total_mb", type=int, default=100)
     parser.add_argument("--max_single_mb", type=int, default=15)
     parser.add_argument("--min_core_py_files", type=int, default=25)
@@ -247,8 +247,8 @@ def parse_args() -> argparse.Namespace:
     # ap.add_argument("--workers", type=int, default=4)
     parser.add_argument("--max_inflight_files", type=int, default=64) # For each workers
     # Scanning controls
-    parser.add_argument("--candidates_per_bucket", type=int, default=100)
-    parser.add_argument("--scan_max", type=int, default=500_000)
+    parser.add_argument("--candidates_per_bucket", type=int, default=500)
+    parser.add_argument("--scan_max", type=int, default=300_000)
     parser.add_argument("--topk_random_pick", type=int, default=8) # Pick random among top k buckets
     parser.add_argument("--max_repos_per_owner", type=int, default=1)
     # Post check on real files

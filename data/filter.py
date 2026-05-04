@@ -128,8 +128,8 @@ def main():
         out_file.write("\n".join(lines))
     print(f"\nHoàn tất! Dữ liệu đã lưu tại {args.output_file}")
     print(f"\nHoàn tất! Dữ liệu đã lưu tại {args.output_file}")
-    metrics["average_total_length"] = metrics["total_length"] / metrics["total_count"]
-    metrics["average_content_length"] = metrics["content_length"] / metrics["total_count"]
+    metrics["average_total_length"] = metrics["total_length"] / metrics["total_count"] #type:ignore
+    metrics["average_content_length"] = metrics["content_length"] / metrics["total_count"] #type:ignore
     print("Dataset metrics:")
     for key, value in metrics.items():
         print(f" - {key}: {value}")
